@@ -1,5 +1,9 @@
 # WebFront cookbook
 
+## Required cookbook
+
+- `nginx` cookbook with `source` recipe
+
 ## Configuration example
 
 ```json
