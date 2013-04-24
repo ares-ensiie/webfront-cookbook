@@ -1,0 +1,16 @@
+upstream <%= @site[:name] %>_upstream {
+<% @site[:upstreams].each do |us| %>
+  server <%= us %>;
+<% end %>
+}
+
+server {
+  listen 80;
+  server_name <%= @site[:hosts].join(' ') %>;
+
+  location / {
+    proxy_pass http://<%= @site[:name] %>_upstream;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+  }
+}
