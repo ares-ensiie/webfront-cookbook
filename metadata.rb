@@ -1,3 +1,5 @@
+name 'webfront'
+
 maintainer 'Paul Chobert'
 maintainer_email 'paul@chobert.fr'
 
